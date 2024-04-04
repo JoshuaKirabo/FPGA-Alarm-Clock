@@ -1,0 +1,426 @@
+Analysis & Synthesis report for MilestoneFPGA
+Mon Apr  1 00:07:19 2024
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Port Connectivity Checks: "bcd_7segment:display5"
+ 11. Port Connectivity Checks: "bcd_7segment:display4"
+ 12. Port Connectivity Checks: "bcd_7segment:display3"
+ 13. Port Connectivity Checks: "bcd_7segment:display2"
+ 14. Port Connectivity Checks: "bcd_7segment:display1"
+ 15. Port Connectivity Checks: "bcd_7segment:display0"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Apr  1 00:07:19 2024       ;
+; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
+; Revision Name                   ; MilestoneFPGA                               ;
+; Top-level Entity Name           ; MilestoneFPGA                               ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 53                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSXFC6D6F31C6     ;                    ;
+; Top-level entity name                                                           ; MilestoneFPGA      ; MilestoneFPGA      ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                               ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                 ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+---------+
+; bcd_7segment.v                   ; yes             ; User Verilog HDL File  ; C:/Users/joshuakirabo/Desktop/MilestoneFPGA/bcd_7segment.v   ;         ;
+; led_controller.v                 ; yes             ; User Verilog HDL File  ; C:/Users/joshuakirabo/Desktop/MilestoneFPGA/led_controller.v ;         ;
+; MilestoneFPGA.v                  ; yes             ; User Verilog HDL File  ; C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v  ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimate of Logic utilization (ALMs needed) ; 0     ;
+;                                             ;       ;
+; Combinational ALUT usage for logic          ; 0     ;
+;     -- 7 input functions                    ; 0     ;
+;     -- 6 input functions                    ; 0     ;
+;     -- 5 input functions                    ; 0     ;
+;     -- 4 input functions                    ; 0     ;
+;     -- <=3 input functions                  ; 0     ;
+;                                             ;       ;
+; Dedicated logic registers                   ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 53    ;
+;                                             ;       ;
+; Total DSP Blocks                            ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 53    ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name   ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
+; |MilestoneFPGA             ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 53   ; 0            ; |MilestoneFPGA      ; MilestoneFPGA ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++---------------------------------------------+----------------------------------------+
+; Register name                               ; Reason for Removal                     ;
++---------------------------------------------+----------------------------------------+
+; led_controller:alarm_leds|toggle            ; Lost fanout                            ;
+; led_controller:alarm_leds|counter[0..24]    ; Lost fanout                            ;
+; led_controller:alarm_leds|led_pattern[0..9] ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 36      ;                                        ;
++---------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bcd_7segment:display5"                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; bcd  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "bcd[3..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bcd_7segment:display4"                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; bcd  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "bcd[3..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bcd_7segment:display3"                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; bcd  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "bcd[3..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bcd_7segment:display2"                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; bcd  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "bcd[3..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bcd_7segment:display1"                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; bcd  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "bcd[3..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bcd_7segment:display0"                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; bcd  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "bcd[3..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
+; boundary_port         ; 53                          ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+    Info: Processing started: Mon Apr  1 00:06:52 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MilestoneFPGA -c MilestoneFPGA
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_7segment.v
+    Info (12023): Found entity 1: bcd_7segment File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/bcd_7segment.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file led_controller.v
+    Info (12023): Found entity 1: led_controller File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/led_controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file milestonefpga.v
+    Info (12023): Found entity 1: MilestoneFPGA File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at MilestoneFPGA.v(32): created implicit net for "bcd_input0" File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 32
+Warning (10236): Verilog HDL Implicit Net warning at MilestoneFPGA.v(33): created implicit net for "bcd_input1" File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 33
+Warning (10236): Verilog HDL Implicit Net warning at MilestoneFPGA.v(34): created implicit net for "bcd_input2" File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 34
+Warning (10236): Verilog HDL Implicit Net warning at MilestoneFPGA.v(35): created implicit net for "bcd_input3" File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 35
+Warning (10236): Verilog HDL Implicit Net warning at MilestoneFPGA.v(36): created implicit net for "bcd_input4" File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 36
+Warning (10236): Verilog HDL Implicit Net warning at MilestoneFPGA.v(37): created implicit net for "bcd_input5" File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at MilestoneFPGA.v(45): created implicit net for "alarm_trigger" File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 45
+Info (12127): Elaborating entity "MilestoneFPGA" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at MilestoneFPGA.v(29): object "bcd_input" assigned a value but never read File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 29
+Warning (10036): Verilog HDL or VHDL warning at MilestoneFPGA.v(39): object "blink_signal" assigned a value but never read File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 39
+Info (12128): Elaborating entity "bcd_7segment" for hierarchy "bcd_7segment:display0" File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 32
+Info (12128): Elaborating entity "led_controller" for hierarchy "led_controller:alarm_leds" File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 47
+Warning (10230): Verilog HDL assignment warning at led_controller.v(14): truncated value with size 32 to match size of target (25) File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/led_controller.v Line: 14
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "seg0[0]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 18
+    Warning (13410): Pin "seg0[1]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 18
+    Warning (13410): Pin "seg0[2]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 18
+    Warning (13410): Pin "seg0[3]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 18
+    Warning (13410): Pin "seg0[4]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 18
+    Warning (13410): Pin "seg0[5]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 18
+    Warning (13410): Pin "seg0[6]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 18
+    Warning (13410): Pin "seg1[0]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 19
+    Warning (13410): Pin "seg1[1]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 19
+    Warning (13410): Pin "seg1[2]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 19
+    Warning (13410): Pin "seg1[3]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 19
+    Warning (13410): Pin "seg1[4]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 19
+    Warning (13410): Pin "seg1[5]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 19
+    Warning (13410): Pin "seg1[6]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 19
+    Warning (13410): Pin "seg2[0]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 20
+    Warning (13410): Pin "seg2[1]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 20
+    Warning (13410): Pin "seg2[2]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 20
+    Warning (13410): Pin "seg2[3]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 20
+    Warning (13410): Pin "seg2[4]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 20
+    Warning (13410): Pin "seg2[5]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 20
+    Warning (13410): Pin "seg2[6]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 20
+    Warning (13410): Pin "seg3[0]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 21
+    Warning (13410): Pin "seg3[1]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 21
+    Warning (13410): Pin "seg3[2]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 21
+    Warning (13410): Pin "seg3[3]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 21
+    Warning (13410): Pin "seg3[4]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 21
+    Warning (13410): Pin "seg3[5]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 21
+    Warning (13410): Pin "seg3[6]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 21
+    Warning (13410): Pin "seg4[0]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 22
+    Warning (13410): Pin "seg4[1]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 22
+    Warning (13410): Pin "seg4[2]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 22
+    Warning (13410): Pin "seg4[3]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 22
+    Warning (13410): Pin "seg4[4]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 22
+    Warning (13410): Pin "seg4[5]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 22
+    Warning (13410): Pin "seg4[6]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 22
+    Warning (13410): Pin "seg5[0]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 23
+    Warning (13410): Pin "seg5[1]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 23
+    Warning (13410): Pin "seg5[2]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 23
+    Warning (13410): Pin "seg5[3]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 23
+    Warning (13410): Pin "seg5[4]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 23
+    Warning (13410): Pin "seg5[5]" is stuck at GND File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 23
+    Warning (13410): Pin "seg5[6]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 23
+    Warning (13410): Pin "leds[0]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 27
+    Warning (13410): Pin "leds[1]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 27
+    Warning (13410): Pin "leds[2]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 27
+    Warning (13410): Pin "leds[3]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 27
+    Warning (13410): Pin "leds[4]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 27
+    Warning (13410): Pin "leds[5]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 27
+    Warning (13410): Pin "leds[6]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 27
+    Warning (13410): Pin "leds[7]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 27
+    Warning (13410): Pin "leds[8]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 27
+    Warning (13410): Pin "leds[9]" is stuck at VCC File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 27
+Info (17049): 26 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: C:/Users/joshuakirabo/Desktop/MilestoneFPGA/MilestoneFPGA.v Line: 4
+Info (21057): Implemented 53 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 52 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 67 warnings
+    Info: Peak virtual memory: 4811 megabytes
+    Info: Processing ended: Mon Apr  1 00:07:19 2024
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:49
+
+
