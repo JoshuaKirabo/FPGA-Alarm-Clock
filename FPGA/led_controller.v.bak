@@ -1,9 +1,0 @@
-module led_controller(
-    input wire clk,
-    input wire alarm_trigger,
-    output wire [7:0] leds
-);
-
-// Implementation of your LED control logic goes here
-
-endmodule
